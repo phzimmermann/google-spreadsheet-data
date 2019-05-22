@@ -1,6 +1,6 @@
 {
   "name": "google-spreadsheet-data",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Read and write google spreadsheets from nodejs with high abstraction.",
   "main": "index.js",
   "scripts": {
