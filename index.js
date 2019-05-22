@@ -8,7 +8,7 @@ const SpreadsheetData = class SpreadsheetData {
 
     authenticate() {
         return new Promise((resolve, reject) => {
-            doc.useServiceAccountAuth(this.creds, (err) => {
+            this.doc.useServiceAccountAuth(this.creds, (err) => {
                 if (err) {
                     reject(err);
                 }
@@ -29,12 +29,12 @@ const SpreadsheetData = class SpreadsheetData {
     }
 
     async getObject(worksheetId) {
-        const rows = await getRows(worksheetId);
+        const rows = await this._getRows(worksheetId);
         return rows.reduce((curr, row) => ({...curr, [row.key.replace(':', '')]: row.value }), {});
     }
 
     async getArray(worksheetId, keys) {
-        const rows = await getRows(worksheetId);
+        const rows = await this._getRows(worksheetId);
         return rows.map(row => keys.reduce((curr, key) => ({...curr, [key]: row[key]}), {}));
     }
 };
