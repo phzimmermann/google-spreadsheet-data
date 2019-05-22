@@ -1,0 +1,14 @@
+{
+  "name": "google-spreadsheet-data",
+  "version": "0.1.0",
+  "description": "Read and write google spreadsheets from nodejs with high abstraction.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "google-spreadsheet": "^2.0.7"
+  },
+  "author": "",
+  "license": "ISC"
+}
